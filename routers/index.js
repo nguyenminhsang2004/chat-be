@@ -4,7 +4,7 @@ const router = express.Router()
 router.use('/api/group', require(__dirname + '/group'))
 
 router.get('/', (req, res) => {
-  res.send('home')
+  res.send('Home page')
 })
 
 module.exports = router
