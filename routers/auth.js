@@ -19,7 +19,6 @@ router.post('/login', async (req, res) => {
 router.get('/in4', async (req, res) => {
   const { id } = req.body
   console.log({ id })
-
   try {
     await client.query('BEGIN')
     const result1 = await client.query(
@@ -27,7 +26,7 @@ router.get('/in4', async (req, res) => {
     )
     const result2 = await client.query(`fetch all ${result1.rows[0]['web_chat_users_getinfor']}`)
     await client.query('COMMIT')
-    result2.rows && res.status(200).json({ data: result2.rows[0] })
+    result2.rows[0] && res.status(200).json({ data: result2.rows[0] })
   } catch (e) {
     await client.query('ROLLBACK')
     res.status(500).json({ data: 'Internal server error' })
