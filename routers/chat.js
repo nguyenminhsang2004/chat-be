@@ -16,7 +16,7 @@ router.post('/update', async (req, res) => {
   }
 })
 
-router.get('/get-all', async (req, res) => {
+router.get('/get-all-by-group', async (req, res) => {
   const { id } = req.body
   console.log(id)
   try {
