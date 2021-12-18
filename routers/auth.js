@@ -16,7 +16,7 @@ router.post('/login', async (req, res) => {
   }
 })
 
-router.get('/in4', async (req, res) => {
+router.post('/in4', async (req, res) => {
   const { id } = req.body
   console.log({ id })
   try {

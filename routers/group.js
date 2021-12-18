@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const client = require('../connectDB')
 
-router.get('/get-list-group', async (req, res) => {
+router.post('/get-list-group', async (req, res) => {
   const { id } = req.body
   try {
     await client.query('BEGIN')
